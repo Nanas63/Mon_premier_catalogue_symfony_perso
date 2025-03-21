@@ -110,7 +110,7 @@ final class AdminController extends AbstractController
         $entityManager->remove($category);
         $entityManager->flush();
 
-        return $this->redirectToRoute('admin/show_category');
+        return $this->redirectToRoute('list_category');
     }
 
     #[Route('/edit_category/{id}', name: 'edit_category')]

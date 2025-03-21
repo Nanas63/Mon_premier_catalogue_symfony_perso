@@ -36,11 +36,12 @@
 					</td>
 
 					<td>
-						{# <a href="{{path('remove_product', {id : prod.id}) }}" class="btn btn-primary">Sup</a> #}
+						
 
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{prod.id}}" >
 							Sup
 						</button>
+
 					</td>
 					<td>
 						<a href="{{path('edit_product', {id : prod.id}) }}" class="btn btn-primary">Modif</a>
@@ -48,7 +49,7 @@
 
 					<td></td>
 				</tr>
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="exampleModal{{prod.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -59,7 +60,9 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-								<button type="button" class="btn btn-primary">Supprimer</button>
+								{# <button type="button" class="btn btn-primary">Supprimer</button> #}
+
+								<a href="{{path('remove_product', {id : prod.id}) }}" class="btn btn-primary">Supprimer</a>
 							</div>
 						</div>
 					</div>
