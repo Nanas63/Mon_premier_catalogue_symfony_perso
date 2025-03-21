@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+
+
+
+
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  {# <button class="btn btn-primary" type="button"></button> #}
+  <a class="btn btn-primary" href="{{path('list_category')}}">Gérer les categories</a>
+
+  {# <button class="btn btn-primary" type="button"></button> #}
+<a class="btn btn-primary" href="{{path('list_product')}}">Gérer les Produits</a>
+
+</div>
+
+{% endblock %}

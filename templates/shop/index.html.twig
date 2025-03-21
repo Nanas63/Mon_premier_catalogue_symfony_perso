@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShopController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>All products</h1>
+		<div class="row g-5">
+
+
+			{% for product in products %}
+				<div class="col-xl-4 col-lg-4 col-sm-6">
+					<div class="card">
+
+
+						<img src="{{product.image}}" class="card-img-top" alt="photo de la patisserie">
+						<div class="card-body">
+							<h5 class="card-title">{{product.name}}</h5>
+							<p class="card-price">{{product.price}}
+								€</p>
+							{% for category in product.categories %}
+								<p class="card-category">{{category.label}}</p>
+							{% endfor %}
+							<a href="{{path('shop_product', {'id' : product.id}) }}" class="btn btn-primary">Click</a>
+							
+
+						</div>
+					</div>
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

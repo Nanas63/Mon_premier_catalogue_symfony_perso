@@ -1,0 +1,21 @@
+<div class="row g-5">
+
+<h1>{{category.label}}</h1>
+
+	{% for product in category.getProducts %}
+
+
+		<div class="col-xl-4 col-lg-4 col-sm-6">
+			<div class="card">
+				<img src="{{product.image}}" class="card-img-top" alt="photo de la patisserie." style='width: 18rem'>
+				<div class="card-body">
+					<h5 class="card-title">{{product.name}}</h5>
+					<p class="card-price">
+						prix :{{product.price}}
+						euros</p>
+					{% endfor %}
+
+				</div>
+			</div>
+        </div>  
+</div>

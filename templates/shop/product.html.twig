@@ -1,0 +1,22 @@
+{% block body %}
+
+	<h1 class="card-title">{{product.name}}</h1>
+	<div class="card">
+
+
+		<img src="{{product.image}}" class="card-img-top" alt="photo de la patisserie">
+		<div class="card-body">
+
+			<p class="card-price">{{product.price}}
+				€</p>
+			{% for category in product.categories %}
+				<p class="card-category">{{category.label}}</p>
+                <a href="{{path('shop_category', {'id' : category.id}) }}" class="btn btn-primary">Click</a>
+			{% endfor %}
+			
+
+
+		</div>
+
+
+	{% endblock %}
