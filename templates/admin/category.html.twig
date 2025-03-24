@@ -1,14 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 {% block body %}
-	<h1>category</h1>
+	<h1>Categories</h1>
 
-	<a href="{{path('add_category') }}" class="btn btn-primary">Ajouter</a>
+	<a href="{{path('add_category') }}" class="btn btn-warning">Ajouter</a>
 	<table class="table">
 		<thead>
 			<tr>
 				<th scope="col"></th>
-				<th scope="col">Label</th>
-				<th scope="col">Color</th>
+				<th scope="col">Nom</th>
+				<th scope="col">Couleur</th>
 				<th scope="col">Voir</th>
 				<th scope="col">Supprimer</th>
 				<th scope="col">Modifier</th>
@@ -16,19 +16,18 @@
 			</tr>
 		</thead>
 		<tbody>
-
 			{% for cat in categories %}
 				<tr>
 					<th scope="row">{{cat.id}}</th>
 					<td>{{cat.label}}</td>
 					<td>{{cat.color}}</td>
 					<td>
-						<a href="{{path('show_category', {id : cat.id}) }}" class="btn btn-primary">Voir</a>
+						<a href="{{path('show_category', {id : cat.id}) }}" class="btn btn-warning">Voir</a>
 					</td>
 
 					<td>
 
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{cat.id}}">
+						<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{cat.id}}">
 							Sup
 						</button>
 
@@ -37,10 +36,10 @@
 
 
 					<td>
-						<a href="{{path('edit_category', {id : cat.id}) }}" class="btn btn-primary">Modif</a>
+						<a href="{{path('edit_category', {id : cat.id}) }}" class="btn btn-warning">Modif</a>
 					</td>
 
-					<td></td>
+					
 
 				</tr>
 				<div class="modal fade" id="exampleModal{{cat.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -74,6 +73,7 @@
 																					</tr>
 																				</tbody> #}
 			{% endfor %}
+			
 		</tbody>
 	</table>
 {% endblock %}

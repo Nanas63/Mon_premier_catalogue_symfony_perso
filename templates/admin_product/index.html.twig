@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block title %}Hello AdminProductController!
 {% endblock %}
@@ -6,7 +6,7 @@
 {% block body %}
 	<h1>Produits</h1>
 
-	<a href="{{path('add_product') }}" class="btn btn-primary">Ajouter</a>
+	<a href="{{path('add_product') }}" class="btn btn-warning">Ajouter</a>
 	<table class="table">
 		<thead>
 			<tr>
@@ -32,19 +32,19 @@
 					{# 					<td>{{prod.categories}}</td>
 										 #}
 					<td>
-						<a href="{{path('show_product', {id : prod.id}) }}" class="btn btn-primary">Voir</a>
+						<a href="{{path('show_product', {id : prod.id}) }}" class="btn btn-warning">Voir</a>
 					</td>
 
 					<td>
 						
 
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{prod.id}}" >
+						<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{prod.id}}" >
 							Sup
 						</button>
 
 					</td>
 					<td>
-						<a href="{{path('edit_product', {id : prod.id}) }}" class="btn btn-primary">Modif</a>
+						<a href="{{path('edit_product', {id : prod.id}) }}" class="btn btn-warning">Modif</a>
 					</td>
 
 					<td></td>
@@ -60,7 +60,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-								{# <button type="button" class="btn btn-primary">Supprimer</button> #}
+								
 
 								<a href="{{path('remove_product', {id : prod.id}) }}" class="btn btn-primary">Supprimer</a>
 							</div>

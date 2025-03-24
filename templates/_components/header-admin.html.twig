@@ -1,0 +1,29 @@
+
+<a class="btn btn-warning btn-lg" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class=>Menu
+ 
+</a>
+{# <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Produits
+</button> #}
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Gérer</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Ajouter des Catégories, des Produits...
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      <button type="button" class="btn btn-outline-warning">Sélectionner</button>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{{path('list_category')}}">Catégories</a></li>
+        <li><a class="dropdown-item" href="{{path('list_product')}}">Produits</a></li>
+        {# <li><a class="dropdown-item" href="#">Something else here</a></li> #}
+      </ul>
+    </div>
+  </div>
+</div>
