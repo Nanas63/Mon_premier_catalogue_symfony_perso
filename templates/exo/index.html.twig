@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<dl>
+		{% set demoJoin = ['je', 'suis', 'un', 'tableau'] %}
+		<dt>je, suis, un, tableau</dt>
+		<dd>{{ demoJoin|join(',')}}</dd>
+
+		{% set exoNomFamille = "Durand" %}
+		<dt>DURAND</dt>
+		<dd>{{ exoNomFamille|upper() }}</dd>
+
+
+		{% set exoPrenom = "charlotte" %}
+		<dt>Charlotte</dt>
+		<dd>{{ exoPrenom|capitalize() }}</dd>
+
+		{% set exoChut = "MOINS FORT !!" %}
+		<dt>moins fort !!</dt>
+		<dd>{{ exoChut|lower()}}</dd>
+
+		{% set exoInitial = "Diana" %}
+		<dt>Lady D.</dt>
+		<dd>Lady
+			{{ exoInitial|first }}.</dd>
+
+		{% set exoToutrond = 99.95 %}
+		<dt>100</dt>
+		<dd>{{ exoToutrond|join(', ')|lower }}</dd>
+
+
+		{% set exomaintenant = 'now' %}
+		<dt>25/03/2024 (la date du jour)</dt>
+		<dd>{{ exomaintenant|date_modify("-365 day")|date("d/m/Y") }}</dd>
+
+
+		{% set exoHtml = "<h3>Je suis un vrai titre !</h3>" %}
+		<dt>
+			<h3>Je suis un vrai titre !</h3>
+		</dt>
+		<dd>{{ exoHtml|raw }}</dd>
+
+
+		{% set mots = 'feu eau terre vent' %}
+		<dt>
+			<ul>
+				<li>feu</li>
+				<li>eau</li>
+				<li>terre</li>
+				<li>vent</li>
+			</ul>
+
+		</dt>
+		<dd>
+			<ul>
+				{% for mot in mots|split(',','4') %}
+					<li>{{ mot }}</li>
+				{% endfor %}
+			</ul>
+		</dd>
+
+		{% set exoTri = [33, 5, 9, 4, 5, 3, 2] %}
+		<dt>2, 3, 4, 5, 5, 9, 33</dt>
+		<dd>{{ exoTri|sort|join(', ') }}</dd>
+
+
+		{% set exoRebours = [1, 2, 3, 4, 5] %}
+		<dt>5, 4, 3, 2, 1</dt>
+		<dd>{{ exoRebours|sort|reverse|join(', ') }}</dd>
+
+
+		{% set exoCharlie = ['Pas charlie', 'Toujours pas charlie', 'peut être charlie', 'CHARLIE', 'nan !', 'essaye encore !'] %}
+		<dt>CHARLIE</dt>
+		<dd>
+			{{ exoCharlie |find(v =>'CHARLIE' == v)|join(',') }}</dd>
+
+
+		{% set exocoucou = ['hello', 'guten tag', 'privyet', 'plop', 'coucou', 'bonjour', 'hi'] %}
+		<dt>plop, coucou</dt>
+		<dd>{{ exocoucou|slice(3, 2)|join(', ')}}</dd>
+
+
+		{#        // Filtre à créer soi même ! #}
+		{% set exoSenpai = 'notice me senpai' %}
+		<dt>!!!NOTICE ME SENPAI!!!</dt>
+		<dd>{{ exoSenpai|pointexclamation }}</dd>
+
+		{#        // Filtre à créer soi même ! #}
+		{% set exoArgent = 99.99 %}
+		<dt>99,99 €</dt>
+		<dd>{{ exoArgent|euro}}</dd>
+
+{#        // Filtre à créer soi même ! #}
+        {% set exolorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid assumenda consectetur ducimus esse harum illo, itaque, iusto laudantium neque nobis obcaecati officiis quae reiciendis reprehenderit, similique sit suscipit unde.' %}
+        <dt>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium...</dt>
+        <dd>{{ exolorem|etc }}</dd>
+
+
+	</dl>
+{% endblock %}

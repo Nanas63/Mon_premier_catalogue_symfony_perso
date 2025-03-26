@@ -22,25 +22,34 @@
 					<a class="nav-link" href="{{path ('app_admin')}}">Admin</a>
 				</li>
 				{# <li class="nav-item">
-												          <a class="nav-link" href="{{path ('shop_category')}}">Product</a>
-												        </li> #}
+																          <a class="nav-link" href="{{path ('shop_category')}}">Product</a>
+																        </li> #}
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Categories
 					</a>
 					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="{{path ('shop_category', {id : 1})}}">Viennoiseries</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{path ('shop_category', {id : 3})}}">Tartes</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{path ('shop_category', {id : 2})}}">Gâteaux</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{path ('shop_category', {id : 19})}}">Pains</a>
-						</li>
+
+						{%set categories = type()%}
+						{% for category in categories %}
+						
+							<li>
+								<a class="dropdown-item" href="{{path('shop_category', {'id' : category.id}) }}">{{category.label|lower|capitalize}}</a>
+							</li>
+						{% endfor %}
+
+						{# <li>
+													<a class="dropdown-item" href="{{path ('shop_category', {id : 1})}}">Viennoiseries</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="{{path ('shop_category', {id : 3})}}">Tartes</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="{{path ('shop_category', {id : 2})}}">Gâteaux</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="{{path ('shop_category', {id : 19})}}">Pains</a>
+												</li> #}
 					</ul>
 
 				</li>
